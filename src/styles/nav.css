@@ -22,6 +22,13 @@
   bottom: 3px;
 }
 
+.hamburger:hover::before,
+.hamburger:hover::after,
+.hamburger:focus::before,
+.hamburger:focus::after {
+  background-color: #fbaf85;
+}
+
 .flip.hamburger::before {
   top: 7px;
   transform: rotate(-225deg);
@@ -35,6 +42,13 @@
 /*****************************************
   Shopping Cart
 *****************************************/
+.icon-cart path {
+  transition: all 400ms;
+}
+
+.icon-cart:hover path {
+  fill: #fbaf85;
+}
 
 /*****************************************
   Animations
@@ -54,6 +68,24 @@
   }
   100% {
     transform: translateX(-100vw);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
   }
 }
 
@@ -81,6 +113,14 @@
 
 .slide-out {
   animation: slide-out 400ms forwards;
+}
+
+.slide-down {
+  animation: slide-down 400ms forwards;
+}
+
+.slide-up {
+  animation: slide-up 400ms forwards;
 }
 
 .fade-in {

@@ -45,8 +45,9 @@
 }
 
 .active {
-  text-decoration: underline;
-  color: #1b1d23;
+  text-decoration: 2px underline;
+  text-underline-offset: 0.25rem;
+  color: #fbaf85;
 }
 
 .ninja {

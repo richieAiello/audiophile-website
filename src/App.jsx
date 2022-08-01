@@ -7,6 +7,8 @@ import Category from './routes/Category';
 import CategoryHeadphones from './routes/CategoryHeadphones';
 import CategorySpeakers from './routes/CategorySpeakers';
 import CategoryEarphones from './routes/CategoryEarphones';
+import Details from './routes/Details';
+import Checkout from './routes/Checkout';
 
 const App = () => {
   return (
@@ -23,6 +25,8 @@ const App = () => {
             <Route path="speakers" element={<CategorySpeakers />} />
             <Route path="earphones" element={<CategoryEarphones />} />
           </Route>
+          <Route to="details" element={<Details />} />
+          <Route to="checkout" element={<Checkout />} />
         </Routes>
         <Footer />
       </ScrollToTop>

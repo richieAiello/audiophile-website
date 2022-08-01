@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
+import useMediaQuery from '../../hooks/useMediaQuery';
 import Hamburger from './Hamburger';
-import NavCardMenu from './NavCardMenu';
 import NavMenu from './NavMenu';
 import CartBtn from './CartBtn';
+import Cart from './Cart';
 import Shadow from './Shadow';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import clsx from 'clsx';
@@ -12,35 +13,60 @@ const Nav = props => {
   const [cartVisibility, setCartVisibility] = useState(false);
   const [animateIn, setAnimateIn] = useState(false);
   const [animateOut, setAnimateOut] = useState(false);
-  // const [hidden, setHidden] = useState(true);
+  const [hideNav, setHideNav] = useState(true);
+  const [hideCart, setHideCart] = useState(true);
   const [loading, setLoading] = useState(false);
+
+  const desktop = useMediaQuery('(min-width: 1440px)');
+  const shadowRef = useRef(null);
+
+  useEffect(() => {
+    if (desktop && !cartVisibility) {
+      shadowRef.current.click();
+    }
+  }, [desktop]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-      // animateIn && setAnimateIn(false);
-      // animateOut && setAnimateOut(false);
-      // !menuVisibility && setHidden(true);
+      animateIn && setAnimateIn(false);
+      animateOut && setAnimateOut(false);
+      !navVisibility && setHideNav(true);
+      !cartVisibility && setHideCart(true);
     }, 400);
 
     return () => clearTimeout(timer);
   }, [navVisibility, cartVisibility]);
 
   const handleHamburgerClick = e => {
+    cartVisibility && handleCartClick();
     setLoading(true);
     setNavVisibility(!navVisibility);
-    // hidden && setHidden(false);
-    // menuVisibility ? setAnimateOut(true) : setAnimateIn(true);
+    hideNav && setHideNav(false);
+    navVisibility ? setAnimateOut(true) : setAnimateIn(true);
+  };
+
+  const handleCartClick = e => {
+    navVisibility && handleHamburgerClick();
+    setLoading(true);
+    setCartVisibility(!cartVisibility);
+    hideCart && setHideCart(false);
+    cartVisibility ? setAnimateOut(true) : setAnimateIn(true);
   };
 
   const handleLinkClick = e => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1440) {
       handleHamburgerClick();
     }
   };
 
+  const handleShadowClick = e => {
+    navVisibility && handleHamburgerClick();
+    cartVisibility && handleCartClick();
+  };
+
   return (
-    <nav className="container flex justify-between items-center h-max">
+    <nav className="container flex justify-between items-center">
       <Hamburger
         className={clsx({
           flip: navVisibility,
@@ -48,27 +74,35 @@ const Nav = props => {
         onClick={handleHamburgerClick}
         disabled={loading}
       />
-      {/* <NavCardMenu
+      <Logo className="" />
+      <NavMenu
         className={clsx({
-          hidden: hidden,
-          grid: !hidden,
-          'slide-in': animateIn,
-          'slide-out': animateOut,
+          hidden: hideNav,
+          'slide-in':
+            animateIn && navVisibility && window.innerWidth < 1440,
+          'slide-out':
+            animateOut && !navVisibility && window.innerWidth < 1440,
         })}
         onClick={handleLinkClick}
-      /> */}
-      {/* <Shadow
+      />
+      <Shadow
         className={clsx({
-          hidden: hidden,
-          block: !hidden,
-          'fade-in': animateIn,
-          'fade-out': animateOut,
+          hidden: hideNav && hideCart,
+          'fade-in': animateIn && (hideCart || hideNav),
+          'fade-out': animateOut && !navVisibility && !cartVisibility,
         })}
-        onClick={handleHamburgerClick}
-      /> */}
-      <Logo className="" />
-      <CartBtn />
-      <NavCardMenu />
+        onClick={handleShadowClick}
+        ref={shadowRef}
+      />
+      <CartBtn onClick={handleCartClick} disabled={loading} />
+      <Cart
+        className={clsx({
+          hidden: hideCart,
+          grid: !hideCart,
+          'slide-up': animateIn && cartVisibility,
+          'slide-down': animateOut && !cartVisibility,
+        })}
+      />
     </nav>
   );
 };

@@ -11,7 +11,7 @@ const CartBtn = props => {
       onClick={props.onClick}
       disabled={props.disabled}
     >
-      <Icon className="cart__icon" />
+      <Icon className="icon-cart" />
     </button>
   );
 };
