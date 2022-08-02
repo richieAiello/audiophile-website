@@ -18,3 +18,5 @@ const useMediaQuery = query => {
 };
 
 export default useMediaQuery;
+// Reference
+// https://fireship.io/snippets/use-media-query-hook/

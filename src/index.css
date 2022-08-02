@@ -80,22 +80,26 @@
 /****************************************
   Headings
 ****************************************/
-.heading {
+.heading,
+.heading--large,
+.heading--wide {
   font-weight: 700;
+  text-transform: uppercase;
+}
+
+.heading {
   font-size: 1.5rem;
   line-height: 2.25rem;
   letter-spacing: 0.05375rem;
 }
 
 .heading--large {
-  font-weight: 700;
   font-size: 2.25rem;
   line-height: 2.5rem;
   letter-spacing: 0.080625rem;
 }
 
 .heading--wide {
-  font-weight: 700;
   font-size: 1.75rem;
   line-height: 2.390625rem;
   letter-spacing: 0.125rem;
