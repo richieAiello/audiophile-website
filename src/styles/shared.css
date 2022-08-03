@@ -1,0 +1,11 @@
+.category-card:hover,
+.category-card:focus {
+  background-color: #191919;
+  color: #fff;
+  outline: none;
+}
+
+.category-card:hover .category-card__text,
+.category-card:focus .category-card__text {
+  color: #d87d4a;
+}

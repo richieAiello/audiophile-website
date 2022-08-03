@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom';
-import CategoryNav from '../components/shared/CategoryNav';
+import CategoryNav from '../components/shared-components/CategoryNav';
 
 const Category = props => {
   return (
-    <main>
+    <main className="mt-[150px]">
       <Outlet />
       <CategoryNav />
     </main>
