@@ -1,11 +1,11 @@
-import ProductCard from './ProductCard';
+import ProductNavCard from './ProductNavCard';
 
 const ProductNav = props => {
   return (
     <div>
-      <ProductCard />
-      <ProductCard />
-      <ProductCard />
+      <ProductNavCard />
+      <ProductNavCard />
+      <ProductNavCard />
     </div>
   );
 };

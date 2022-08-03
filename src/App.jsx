@@ -9,26 +9,38 @@ import CategorySpeakers from './routes/CategorySpeakers';
 import CategoryEarphones from './routes/CategoryEarphones';
 import Details from './routes/Details';
 import Checkout from './routes/Checkout';
+import DataContext from './Context/DataContext';
+import { useState } from 'react';
+import useAxiosData from './hooks/useAxiosData';
 
 const App = () => {
+  const [data, setData] = useState([]);
+
+  useAxiosData(setData);
+
   return (
     <BrowserRouter>
       <ScrollToTop>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="category" element={<Category />}>
-            <Route
-              path="headphones"
-              element={<CategoryHeadphones />}
-            />
-            <Route path="speakers" element={<CategorySpeakers />} />
-            <Route path="earphones" element={<CategoryEarphones />} />
-          </Route>
-          <Route to="details" element={<Details />} />
-          <Route to="checkout" element={<Checkout />} />
-        </Routes>
-        <Footer />
+        <DataContext.Provider value={data}>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="category" element={<Category />}>
+              <Route
+                path="headphones"
+                element={<CategoryHeadphones />}
+              />
+              <Route path="speakers" element={<CategorySpeakers />} />
+              <Route
+                path="earphones"
+                element={<CategoryEarphones />}
+              />
+            </Route>
+            <Route to="details" element={<Details />} />
+            <Route to="checkout" element={<Checkout />} />
+          </Routes>
+          <Footer />
+        </DataContext.Provider>
       </ScrollToTop>
     </BrowserRouter>
   );
