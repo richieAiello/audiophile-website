@@ -1,0 +1,21 @@
+.accent::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 101px;
+  background-color: #d87d4a;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin-inline: auto;
+}
+
+.social-link__icon path {
+  transition: all 250ms;
+}
+
+.social-link:hover .social-link__icon path,
+.social-link:focus .social-link__icon path {
+  fill: #d87d4a;
+}

@@ -1,0 +1,132 @@
+/*****************************************
+  Hamburger bar
+*****************************************/
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  display: inline-block;
+  background-color: #fff;
+  width: 1.25rem;
+  height: 0.125rem;
+  border-radius: 1rem;
+  transition: all 400ms;
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: 3px;
+}
+
+.hamburger::after {
+  bottom: 3px;
+}
+
+.hamburger:hover::before,
+.hamburger:hover::after,
+.hamburger:focus::before,
+.hamburger:focus::after {
+  background-color: #fbaf85;
+}
+
+.flip.hamburger::before {
+  top: 7px;
+  transform: rotate(-225deg);
+}
+
+.flip.hamburger::after {
+  bottom: 7px;
+  transform: rotate(-315deg);
+}
+
+/*****************************************
+  Shopping Cart
+*****************************************/
+.icon-cart path {
+  transition: all 400ms;
+}
+
+.icon-cart:hover path {
+  fill: #fbaf85;
+}
+
+/*****************************************
+  Animations
+*****************************************/
+@keyframes slide-in {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 100;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.slide-in {
+  animation: slide-in 400ms forwards;
+}
+
+.slide-out {
+  animation: slide-out 400ms forwards;
+}
+
+.slide-down {
+  animation: slide-down 400ms forwards;
+}
+
+.slide-up {
+  animation: slide-up 400ms forwards;
+}
+
+.fade-in {
+  animation: fade-in 400ms forwards;
+}
+
+.fade-out {
+  animation: fade-out 400ms forwards;
+}
