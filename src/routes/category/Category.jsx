@@ -1,6 +1,6 @@
 import { Outlet } from 'react-router-dom';
-import CategoryNav from '../components/shared-components/CategoryNav';
-import BestGear from '../components/shared-components/BestGear';
+import CategoryNav from '../../components/shared-components/CategoryNav';
+import BestGear from '../../components/shared-components/BestGear';
 
 const Category = props => {
   return (
