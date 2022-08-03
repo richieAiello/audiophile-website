@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import arrow from '../../assets/arrow.svg';
 
-const CategoryCard = props => {
+const CategoryNavCard = props => {
   const linkRef = useRef(null);
 
   const handleCardClick = e => {
@@ -36,4 +36,4 @@ const CategoryCard = props => {
   );
 };
 
-export default CategoryCard;
+export default CategoryNavCard;

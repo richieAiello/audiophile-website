@@ -1,11 +1,11 @@
-import CategoryCard from './CategoryCard';
+import CategoryNavCard from './CategoryNavCard';
 
 const CategoryNav = props => {
   return (
     <div className="container grid gap-y-[4.25rem] mb-[7.5rem] cursor-pointer">
-      <CategoryCard mod="headphones" />
-      <CategoryCard mod="speakers" />
-      <CategoryCard mod="earphones" />
+      <CategoryNavCard mod="headphones" />
+      <CategoryNavCard mod="speakers" />
+      <CategoryNavCard mod="earphones" />
     </div>
   );
 };
