@@ -1,4 +1,5 @@
 import DetailsCard from '../../components/details/DetailsCard';
+import DetailsFeatures from '../../components/details/DetailsFeatures';
 
 const HeadphonesXx991 = props => {
   const slug = 'xx99-mark-one-headphones';
@@ -6,6 +7,7 @@ const HeadphonesXx991 = props => {
   return (
     <>
       <DetailsCard slug={slug} />
+      <DetailsFeatures slug={slug} />
     </>
   );
 };
