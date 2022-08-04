@@ -1,5 +1,11 @@
+import DetailsCard from '../../components/details/DetailsCard';
+
 const HeadphonesXx991 = props => {
-  return null;
+  return (
+    <>
+      <DetailsCard slug="xx99-mark-one-headphones" />
+    </>
+  );
 };
 
 export default HeadphonesXx991;

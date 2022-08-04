@@ -4,7 +4,7 @@ import BestGear from '../../components/shared-components/BestGear';
 
 const Details = props => {
   return (
-    <main className="mt-[200px]">
+    <main className="mt-[6.625rem]">
       <Outlet />
       <CategoryNav />
       <BestGear />
