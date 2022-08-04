@@ -2,14 +2,11 @@ import DetailsBackBtn from './DetailsBackBtn';
 import DetailsCardImage from './DetailsCardImage';
 import NewText from '../shared-components/NewText';
 import DetailsAdd from './DetailsAdd';
-import DataContext from '../../Context/DataContext';
-import { useContext } from 'react';
+import getProduct from '../../helpers/getProduct';
 import clsx from 'clsx';
 
 const DetailsCard = props => {
-  const data = useContext(DataContext);
-
-  const product = data.find(item => item.slug === props.slug && item);
+  const product = getProduct(props.slug);
 
   return (
     <div

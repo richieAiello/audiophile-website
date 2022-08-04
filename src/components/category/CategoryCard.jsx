@@ -1,12 +1,9 @@
-import DataContext from '../../Context/DataContext';
-import { useContext } from 'react';
 import NewText from '../shared-components/NewText';
 import SeeProduct from '../shared-components/SeeProduct';
+import getProduct from '../../helpers/getProduct';
 
 const CategoryCard = props => {
-  const data = useContext(DataContext);
-
-  const product = data.find(item => item.slug === props.slug && item);
+  const product = getProduct(props.slug);
 
   return (
     <section className="container" slug={props.slug}>

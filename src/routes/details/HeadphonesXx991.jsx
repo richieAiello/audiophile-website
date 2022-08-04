@@ -1,9 +1,11 @@
 import DetailsCard from '../../components/details/DetailsCard';
 
 const HeadphonesXx991 = props => {
+  const slug = 'xx99-mark-one-headphones';
+
   return (
     <>
-      <DetailsCard slug="xx99-mark-one-headphones" />
+      <DetailsCard slug={slug} />
     </>
   );
 };
