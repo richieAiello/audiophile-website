@@ -5,7 +5,7 @@ import HeroImage from './HeroImage';
 const Hero = props => {
   return (
     <section className="relative h-[510px] w-full bg-hero-black mb-[5.75rem]">
-      <div className="container relative z-10 text-center text-white pt-[6.75rem]">
+      <div className="container flex flex-col items-center relative z-10 text-center text-white pt-[6.75rem]">
         <NewText hero />
         <h1 className="heading--large mt-4 mb-6">
           XX99 Mark II Headphones
