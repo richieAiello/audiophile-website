@@ -14,7 +14,7 @@ const Hero = props => {
           Experience natural, lifelike audio and exceptional build
           quality made for the passionate music enthusiast.
         </p>
-        <SeeProduct orange />
+        <SeeProduct path="xx99-mark-two-headphones" orange />
       </div>
       <HeroImage />
     </section>

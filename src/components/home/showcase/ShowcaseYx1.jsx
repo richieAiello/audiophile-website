@@ -22,7 +22,7 @@ const ShowcaseYx1 = props => {
         <h2 className="heading--wide text-black mb-8">
           Yx1 Earphones
         </h2>
-        <SeeProduct clear />
+        <SeeProduct path="yx1-earphones" clear />
       </div>
     </section>
   );

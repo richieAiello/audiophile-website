@@ -4,7 +4,7 @@ const ShowcaseZx7 = props => {
   return (
     <section className="relative h-[320px] pl-6 flex flex-col justify-center items-start">
       <h2 className="heading--wide text-black mb-8">Zx7 Speaker</h2>
-      <SeeProduct clear />
+      <SeeProduct path="zx7-speaker" clear />
       <picture>
         <source
           media="(min-width: 1440px)"
