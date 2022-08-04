@@ -14,7 +14,7 @@ const ShowcaseZx9 = props => {
           Upgrade to premium speakers that are phenomenally built to
           deliver truly remarkable sound.
         </p>
-        <SeeProduct black />
+        <SeeProduct path="zx9-speaker" black />
       </div>
       <picture>
         <source

@@ -5,9 +5,7 @@ const SeeProduct = ({ path, orange, clear, black }) => {
   return (
     <Link
       to={`/details/${path}`}
-      className={`
-        uppercase font-bold text-[0.8125rem] leading-[1.11rem] tracking-[0.0625rem]
-        py-[0.9375rem] px-8 duration-[250ms] block
+      className={`btn py-[0.9375rem] px-8 w-max
         ${clsx({
           'bg-transparent': clear,
           'text-black': clear,

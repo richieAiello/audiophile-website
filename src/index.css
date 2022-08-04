@@ -60,6 +60,16 @@
   position: absolute;
 }
 
+.btn {
+  display: block;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  line-height: 1.11rem;
+  letter-spacing: 0.0625rem;
+  transition: all 250ms;
+}
+
 .container {
   margin-inline: auto;
   width: min(100% - 3rem, 375px);
@@ -82,7 +92,8 @@
 ****************************************/
 .heading,
 .heading--large,
-.heading--wide {
+.heading--wide,
+.heading--product {
   font-weight: 700;
   text-transform: uppercase;
 }
@@ -99,10 +110,18 @@
   letter-spacing: 0.080625rem;
 }
 
-.heading--wide {
+.heading--wide,
+.heading--product {
   font-size: 1.75rem;
   line-height: 2.390625rem;
+}
+
+.heading--wide {
   letter-spacing: 0.125rem;
+}
+
+.heading--product {
+  letter-spacing: 0.0625rem;
 }
 
 @media (min-width: 768px) {
@@ -116,5 +135,11 @@
     font-size: 3.5rem;
     line-height: 3.625rem;
     letter-spacing: 0.125rem;
+  }
+
+  .heading--product {
+    font-size: 2.5rem;
+    line-height: 2.75rem;
+    letter-spacing: 0.089375rem;
   }
 }

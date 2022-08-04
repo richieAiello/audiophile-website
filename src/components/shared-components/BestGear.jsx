@@ -16,10 +16,7 @@ const BestGear = props => {
           className="rounded-lg mb-10 h-[320px] w-screen object-cover object-top"
         />
       </picture>
-      <h2
-        className="font-bold text-[1.75rem] leading-[2.375rem] tracking-[0.0625rem] 
-        uppercase max-w-[17ch] mb-8"
-      >
+      <h2 className="heading--product max-w-[17ch] mb-8">
         Bringing you the <span className="text-orange">best </span>
         audio gear
       </h2>
