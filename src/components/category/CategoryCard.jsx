@@ -1,9 +1,9 @@
 import NewText from '../shared-components/NewText';
 import SeeProduct from '../shared-components/SeeProduct';
-import getProduct from '../../helpers/getProduct';
+import useProduct from '../../hooks/useProduct';
 
 const CategoryCard = props => {
-  const product = getProduct(props.slug);
+  const product = useProduct(props.slug);
 
   return (
     <section className="container" slug={props.slug}>

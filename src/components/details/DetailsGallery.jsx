@@ -1,7 +1,7 @@
-import getProduct from '../../helpers/getProduct';
+import useProduct from '../../hooks/useProduct';
 
 const DetailsGallery = props => {
-  const product = getProduct(props.slug);
+  const product = useProduct(props.slug);
   const gallery = product?.gallery;
 
   return (

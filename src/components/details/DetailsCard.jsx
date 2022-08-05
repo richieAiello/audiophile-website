@@ -1,19 +1,19 @@
-import DetailsBackBtn from './DetailsBackBtn';
+import BackBtn from '../shared-components/BackBtn';
 import DetailsCardImage from './DetailsCardImage';
 import NewText from '../shared-components/NewText';
 import DetailsAdd from './DetailsAdd';
-import getProduct from '../../helpers/getProduct';
+import useProduct from '../../hooks/useProduct';
 import clsx from 'clsx';
 
 const DetailsCard = props => {
-  const product = getProduct(props.slug);
+  const product = useProduct(props.slug);
 
   return (
     <div
       className="container text-black mb-[5.5rem]"
       slug={props.slug}
     >
-      <DetailsBackBtn />
+      <BackBtn />
       <DetailsCardImage
         desktop={product?.image.desktop}
         tablet={product?.image.tablet}

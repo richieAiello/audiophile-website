@@ -1,8 +1,8 @@
-import getProduct from '../../helpers/getProduct';
+import useProduct from '../../hooks/useProduct';
 import DetailsSuggestionsCard from './DetailsSuggestionsCard';
 
 const DetailsSuggestions = props => {
-  const product = getProduct(props.slug);
+  const product = useProduct(props.slug);
   const suggestions = product?.others;
 
   return (
