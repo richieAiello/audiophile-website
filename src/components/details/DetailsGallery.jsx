@@ -1,7 +1,7 @@
-import useProduct from '../../hooks/useProduct';
+import useFindProduct from '../../hooks/useFindProduct';
 
 const DetailsGallery = props => {
-  const product = useProduct(props.slug);
+  const product = useFindProduct(props.slug);
   const gallery = product?.gallery;
 
   return (

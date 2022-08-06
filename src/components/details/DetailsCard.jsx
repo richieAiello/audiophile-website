@@ -2,11 +2,11 @@ import BackBtn from '../shared-components/BackBtn';
 import DetailsCardImage from './DetailsCardImage';
 import NewText from '../shared-components/NewText';
 import DetailsAdd from './DetailsAdd';
-import useProduct from '../../hooks/useProduct';
+import useFindProduct from '../../hooks/useFindProduct';
 import clsx from 'clsx';
 
 const DetailsCard = props => {
-  const product = useProduct(props.slug);
+  const product = useFindProduct(props.slug);
 
   return (
     <div

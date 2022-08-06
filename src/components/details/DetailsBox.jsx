@@ -1,7 +1,7 @@
-import useProduct from '../../hooks/useProduct';
+import useFindProduct from '../../hooks/useFindProduct';
 
 const DetailsBox = props => {
-  const product = useProduct(props.slug);
+  const product = useFindProduct(props.slug);
   const includes = product?.includes;
 
   return (
