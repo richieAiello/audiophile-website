@@ -8,12 +8,7 @@ import CategoryHeadphones from './routes/category/CategoryHeadphones';
 import CategorySpeakers from './routes/category/CategorySpeakers';
 import CategoryEarphones from './routes/category/CategoryEarphones';
 import Details from './routes/details/Details';
-import EarphonesYx1 from './routes/details/EarphonesYx1';
-import HeadphonesXx59 from './routes/details/HeadphonesXx59';
-import HeadphonesXx991 from './routes/details/HeadphonesXx991';
-import HeadphonesXx992 from './routes/details/HeadphonesXx992';
-import SpeakersZx7 from './routes/details/SpeakersZx7';
-import SpeakersZx9 from './routes/details/SpeakersZx9';
+import DetailsProduct from './routes/details/DetailsProduct';
 import Checkout from './routes/Checkout';
 
 const App = () => {
@@ -32,21 +27,7 @@ const App = () => {
             <Route path="earphones" element={<CategoryEarphones />} />
           </Route>
           <Route path="details" element={<Details />}>
-            <Route
-              path="xx99-mark-two-headphones"
-              element={<HeadphonesXx992 />}
-            />
-            <Route
-              path="xx99-mark-one-headphones"
-              element={<HeadphonesXx991 />}
-            />
-            <Route
-              path="xx59-headphones"
-              element={<HeadphonesXx59 />}
-            />
-            <Route path="zx9-speaker" element={<SpeakersZx9 />} />
-            <Route path="zx7-speaker" element={<SpeakersZx7 />} />
-            <Route path="yx1-earphones" element={<EarphonesYx1 />} />
+            <Route path="product/:id" element={<DetailsProduct />} />
           </Route>
           <Route path="checkout" element={<Checkout />} />
         </Routes>

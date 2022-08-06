@@ -5,10 +5,7 @@ const DetailsGallery = props => {
   const gallery = product?.gallery;
 
   return (
-    <div
-      className="container grid gap-y-5 mb-[7.5rem]"
-      slug={props.slug}
-    >
+    <div className="grid gap-y-5 mb-[7.5rem]" slug={props.slug}>
       <picture>
         <source
           media="(min-width: 1440px)"

@@ -2,6 +2,7 @@ import CategoryHeading from '../../components/category/CategoryHeading';
 import CategoryWrapper from '../../components/category/CategoryWrapper';
 import CategoryCard from '../../components/category/CategoryCard';
 
+// Map through data to create category cards
 const CategoryHeadphones = props => {
   return (
     <>

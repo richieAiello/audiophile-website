@@ -15,7 +15,7 @@ const DetailsSuggestionsCard = props => {
           className="rounded-lg h-[120px] w-full object-cover"
         />
       </picture>
-      <h3 className="text-black font-bold text-[1.5rem] leading-[2.04875rem] tracking-[0.106875rem]">
+      <h3 className="font-bold text-[1.5rem] leading-[2.04875rem] tracking-[0.106875rem]">
         {item?.name}
       </h3>
       <SeeProduct path={item?.slug} orange />

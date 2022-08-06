@@ -7,9 +7,9 @@ const Home = props => {
   return (
     <main className="mt-[5.625rem]">
       <Hero />
-      <CategoryNav />
+      <CategoryNav className="container" />
       <Showcase />
-      <BestGear />
+      <BestGear className="container" />
     </main>
   );
 };

@@ -6,8 +6,8 @@ const Category = props => {
   return (
     <main className="mt-[90px]">
       <Outlet />
-      <CategoryNav />
-      <BestGear />
+      <CategoryNav className="container" />
+      <BestGear className="container" />
     </main>
   );
 };
