@@ -1,4 +1,4 @@
-import SeeProduct from '../../shared-components/SeeProduct';
+import SeeProductBtn from '../../shared-components/SeeProductBtn';
 
 const ShowcaseYx1 = props => {
   return (
@@ -22,7 +22,7 @@ const ShowcaseYx1 = props => {
         <h2 className="heading--wide text-black mb-8">
           Yx1 Earphones
         </h2>
-        <SeeProduct path="yx1-earphones" clear />
+        <SeeProductBtn path="yx1-earphones" clear />
       </div>
     </section>
   );

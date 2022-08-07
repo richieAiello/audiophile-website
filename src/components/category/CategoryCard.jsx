@@ -1,12 +1,12 @@
 import NewText from '../shared-components/NewText';
-import SeeProduct from '../shared-components/SeeProduct';
+import SeeProductBtn from '../shared-components/SeeProductBtn';
 import useFindProduct from '../../hooks/useFindProduct';
 
-const CategoryCard = props => {
-  const product = useFindProduct(props.slug);
+const CategoryCard = ({ slug }) => {
+  const product = useFindProduct(slug);
 
   return (
-    <section className="container" slug={props.slug}>
+    <section className="container" slug={slug}>
       <picture>
         <source
           media="(min-width: 1440px)"
@@ -31,7 +31,7 @@ const CategoryCard = props => {
           {product?.name}
         </h2>
         <p>{product?.description}</p>
-        <SeeProduct path={product?.slug} orange />
+        <SeeProductBtn path={slug} orange />
       </div>
     </section>
   );

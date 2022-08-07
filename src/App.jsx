@@ -4,11 +4,9 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Home from './routes/Home';
 import Category from './routes/category/Category';
-import CategoryHeadphones from './routes/category/CategoryHeadphones';
-import CategorySpeakers from './routes/category/CategorySpeakers';
-import CategoryEarphones from './routes/category/CategoryEarphones';
+import CategoryOutlet from './routes/category/CategoryOutlet';
 import Details from './routes/details/Details';
-import DetailsProduct from './routes/details/DetailsProduct';
+import DetailsOutlet from './routes/details/DetailsOutlet';
 import Checkout from './routes/Checkout';
 
 const App = () => {
@@ -19,15 +17,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="category" element={<Category />}>
-            <Route
-              path="headphones"
-              element={<CategoryHeadphones />}
-            />
-            <Route path="speakers" element={<CategorySpeakers />} />
-            <Route path="earphones" element={<CategoryEarphones />} />
+            <Route path=":id" element={<CategoryOutlet />} />
           </Route>
           <Route path="details" element={<Details />}>
-            <Route path="product/:id" element={<DetailsProduct />} />
+            <Route path=":id" element={<DetailsOutlet />} />
           </Route>
           <Route path="checkout" element={<Checkout />} />
         </Routes>

@@ -1,4 +1,4 @@
-import SeeProduct from '../../shared-components/SeeProduct';
+import SeeProductBtn from '../../shared-components/SeeProductBtn';
 
 const ShowcaseZx9 = props => {
   return (
@@ -14,7 +14,7 @@ const ShowcaseZx9 = props => {
           Upgrade to premium speakers that are phenomenally built to
           deliver truly remarkable sound.
         </p>
-        <SeeProduct path="zx9-speaker" black />
+        <SeeProductBtn path="zx9-speaker" black />
       </div>
       <picture>
         <source

@@ -6,18 +6,13 @@ import DetailsFeatures from '../../components/details/DetailsFeatures';
 import DetailsBox from '../../components/details/DetailsBox';
 import DetailsGallery from '../../components/details/DetailsGallery';
 import DetailsSuggestions from '../../components/details/DetailsSuggestions';
-import { useEffect } from 'react';
 
-const DetailsProduct = props => {
+const DetailsOutlet = props => {
   const location = useLocation().pathname;
   const slugs = useSlugs();
   const [product, setProduct] = useState(() => {
     return slugs.find(item => item.location === location);
   });
-
-  useEffect(() => {
-    console.log(location);
-  }, []);
 
   return (
     <>
@@ -30,4 +25,4 @@ const DetailsProduct = props => {
   );
 };
 
-export default DetailsProduct;
+export default DetailsOutlet;

@@ -37,7 +37,7 @@ export const ContextProvider = ({ children }) => {
         response.data.map(item => {
           return {
             slug: item.slug,
-            location: `/details/product/${item.slug}`,
+            location: `/details/${item.slug}`,
           };
         })
       );

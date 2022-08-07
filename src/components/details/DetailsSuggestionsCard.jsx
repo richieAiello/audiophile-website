@@ -1,4 +1,4 @@
-import SeeProduct from '../shared-components/SeeProduct';
+import SeeProductBtn from '../shared-components/SeeProductBtn';
 
 const DetailsSuggestionsCard = props => {
   const item = props.item;
@@ -18,7 +18,7 @@ const DetailsSuggestionsCard = props => {
       <h3 className="font-bold text-[1.5rem] leading-[2.04875rem] tracking-[0.106875rem]">
         {item?.name}
       </h3>
-      <SeeProduct path={item?.slug} orange />
+      <SeeProductBtn path={item?.slug} orange />
     </div>
   );
 };
