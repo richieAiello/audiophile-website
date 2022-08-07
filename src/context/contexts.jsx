@@ -15,10 +15,18 @@ const CartDispatchContext = createContext();
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD':
-      return [...state, action.products];
-    default:
-      throw new Error(`Unknown action ${action.type}`);
+      return [...state, action.addProducts];
+    // Increase selected product in cart by 1
+    case 'INCREMENT':
+      return [...state, action.incrementProduct];
+    // Decrease selected item in cart by 1
+    case 'DECREMENT':
+      return [...state, action.decrementProduct];
+    // Empty all items in cart
+    case 'EMPTY':
+      return [];
   }
+  throw new Error(`Unknown action: ${action.type}`);
 };
 
 export const ContextProvider = ({ children }) => {

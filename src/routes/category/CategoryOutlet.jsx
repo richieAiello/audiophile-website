@@ -5,8 +5,8 @@ import CategoryWrapper from '../../components/category/CategoryWrapper';
 import CategoryCard from '../../components/category/CategoryCard';
 
 const CategoryOutlet = props => {
-  const appData = useAppData();
   const location = useLocation().pathname;
+  const appData = useAppData();
   const categoryData = appData.filter(item => {
     return `/category/${item.category}` === location;
   });
