@@ -15,13 +15,18 @@ const CartDispatchContext = createContext();
 const reducer = (state, action) => {
   switch (action.type) {
     case 'ADD':
-      return [...state, action.addProducts];
+      console.log('Add');
+      return [...state, action.addProduct];
     // Increase selected product in cart by 1
-    case 'INCREMENT':
-      return [...state, action.incrementProduct];
+    // Updates state by adding a new array based on the value of replaceProduct
+    case 'REPLACE':
+      console.log('Replaced');
+      return action.replaceProduct;
+    // case 'INCREMENT':
+    //   return [...state, action.incrementProduct];
     // Decrease selected item in cart by 1
-    case 'DECREMENT':
-      return [...state, action.decrementProduct];
+    // case 'DECREMENT':
+    //   return [...state, action.decrementProduct];
     // Empty all items in cart
     case 'EMPTY':
       return [];
@@ -30,7 +35,9 @@ const reducer = (state, action) => {
 };
 
 export const ContextProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(reducer, []);
+  const [state, dispatch] = useReducer(reducer, null, () => {
+    return JSON.parse(localStorage.getItem('cart')) ?? [];
+  });
   const [appData, setAppData] = useState(() => {
     return JSON.parse(localStorage.getItem('appData'));
   });
@@ -59,6 +66,10 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem('slugs', JSON.stringify(slugs));
   }, [slugs]);
+
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(state));
+  }, [state]);
 
   return (
     <AppDataContext.Provider value={appData}>

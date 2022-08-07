@@ -5,6 +5,9 @@ import {
 } from '../../context/contexts';
 
 const Cart = props => {
+  const cartState = useCartState();
+  const dispatch = useCartDispatch();
+
   return (
     <div
       className={`
@@ -13,6 +16,11 @@ const Cart = props => {
         ${props.className}
       `}
     >
+      {/* for testing */}
+      <p>{cartState.length}</p>
+      <button onClick={() => dispatch({ type: 'EMPTY' })}>
+        Empty
+      </button>
       {/* Disable Checkout out button when cart is empty */}
       <CheckoutBtn />
     </div>

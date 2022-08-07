@@ -1,49 +1,61 @@
 import DetailsProductPrice from './DetailsProductPrice';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   useCartState,
   useCartDispatch,
 } from '../../context/contexts';
-import amountInCart from '../../helpers/amountInCart';
 
 const DetailsProductAdd = ({ product }) => {
-  // const [incrementDisabled, setIncrementDisabled] = useState(false);
-  // const [decrementDisabled, setDecrementDisabled] = useState(true);
-  // const [addCartDisabled, setAddCartDisabled] = useState(false);
   const [quantity, setQuantity] = useState(1);
   const cart = useCartState();
   const dispatch = useCartDispatch();
 
-  const handleIncrementClick = e => {
-    const cartAmount = amountInCart(cart, product);
-    console.log(cartAmount);
+  useEffect(() => {
+    console.log(cart);
+  }, [cart]);
 
-    cartAmount + quantity < 10 && setQuantity(prev => prev + 1);
+  const handleIncrementClick = e => {
+    quantity < 10 && setQuantity(prev => prev + 1);
   };
 
   const handleDecrementClick = e => {
     quantity > 1 && setQuantity(prev => prev - 1);
   };
 
-  // Creates a new array or products based on the quantity state.
-  // Adds array to cart with a dispatch function.
-  // If quantity was greater then one, reset quantity to 1.
   const handleAddCartClick = e => {
-    const cartAmount = amountInCart(cart, product);
+    const currentProduct = {
+      slug: product?.slug,
+      name: product?.name,
+      price: product?.price,
+      quantity: quantity,
+    };
 
-    const products = [...Array(quantity)].map(() => {
-      return {
-        slug: product?.slug,
-        name: product?.name,
-        price: product?.price,
-      };
-    });
+    const getProductData = () => {
+      const matchedProduct = cart.find(
+        item => item.slug === currentProduct.slug
+      );
 
-    amountInCart.length + products.length > 10 &&
-      console.log('10 items max');
+      if (matchedProduct) {
+        const newCart = cart.filter(
+          item => item.slug !== matchedProduct.slug
+        );
+        currentProduct.quantity =
+          currentProduct.quantity + matchedProduct.quantity;
 
+        dispatch({
+          type: 'REPLACE',
+          replaceProduct: [...newCart, currentProduct],
+        });
+      } else {
+        dispatch({
+          type: 'ADD',
+          addProduct: currentProduct,
+        });
+      }
+    };
+
+    getProductData();
     quantity > 1 && setQuantity(1);
-    console.log(products);
   };
 
   return (
