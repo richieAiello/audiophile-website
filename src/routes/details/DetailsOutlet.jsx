@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router-dom';
-import { useSlugs } from '../../context/contexts';
+import { useSlugs } from '../../context/AppContext';
 import DetailsProductCard from '../../components/details/DetailsProductCard';
 import DetailsFeatures from '../../components/details/DetailsFeatures';
 import DetailsBox from '../../components/details/DetailsBox';

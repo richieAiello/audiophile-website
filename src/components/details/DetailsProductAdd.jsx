@@ -1,18 +1,30 @@
 import DetailsProductPrice from './DetailsProductPrice';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import {
   useCartState,
   useCartDispatch,
-} from '../../context/contexts';
+} from '../../context/CartContext';
 
 const DetailsProductAdd = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
   const cart = useCartState();
   const dispatch = useCartDispatch();
 
-  useEffect(() => {
-    console.log(cart);
-  }, [cart]);
+  const currentProduct = {
+    slug: product?.slug,
+    name: product?.cart.name,
+    icon: product?.cart.icon,
+    price: product?.price,
+    quantity: quantity,
+  };
+
+  const matchedProduct = cart.find(
+    item => item.slug === currentProduct.slug
+  );
+
+  const newCart = cart.filter(
+    item => item.slug !== matchedProduct.slug
+  );
 
   const handleIncrementClick = e => {
     quantity < 10 && setQuantity(prev => prev + 1);
@@ -23,28 +35,14 @@ const DetailsProductAdd = ({ product }) => {
   };
 
   const handleAddCartClick = e => {
-    const currentProduct = {
-      slug: product?.slug,
-      name: product?.name,
-      price: product?.price,
-      quantity: quantity,
-    };
-
-    const getProductData = () => {
-      const matchedProduct = cart.find(
-        item => item.slug === currentProduct.slug
-      );
-
+    const addToCart = () => {
       if (matchedProduct) {
-        const newCart = cart.filter(
-          item => item.slug !== matchedProduct.slug
-        );
         currentProduct.quantity =
           currentProduct.quantity + matchedProduct.quantity;
 
         dispatch({
-          type: 'REPLACE',
-          replaceProduct: [...newCart, currentProduct],
+          type: 'UPDATE',
+          updateProduct: [...newCart, currentProduct],
         });
       } else {
         dispatch({
@@ -54,7 +52,7 @@ const DetailsProductAdd = ({ product }) => {
       }
     };
 
-    getProductData();
+    addToCart();
     quantity > 1 && setQuantity(1);
   };
 

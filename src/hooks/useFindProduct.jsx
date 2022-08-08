@@ -1,4 +1,4 @@
-import { useAppData } from '../context/contexts';
+import { useAppData } from '../context/AppContext';
 
 const useFindProduct = slug => {
   const data = useAppData();
