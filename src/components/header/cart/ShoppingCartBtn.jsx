@@ -1,6 +1,6 @@
-import { ReactComponent as Icon } from '../../assets/cart.svg';
+import { ReactComponent as Icon } from '../../../assets/cart.svg';
 
-const CartBtn = props => {
+const ShoppingCartBtn = props => {
   return (
     <button
       type="button"
@@ -16,4 +16,4 @@ const CartBtn = props => {
   );
 };
 
-export default CartBtn;
+export default ShoppingCartBtn;

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
-const SeeProduct = ({ path, orange, clear, black }) => {
+const SeeProductBtn = ({ path, orange, clear, black }) => {
   return (
     <Link
       to={`/details/${path}`}
@@ -22,4 +22,4 @@ const SeeProduct = ({ path, orange, clear, black }) => {
   );
 };
 
-export default SeeProduct;
+export default SeeProductBtn;

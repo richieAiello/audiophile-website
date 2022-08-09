@@ -1,6 +1,11 @@
 const BestGear = props => {
   return (
-    <section className="container flex flex-col items-center text-center mb-[7.5rem]">
+    <section
+      className={`
+        flex flex-col items-center text-center mb-[7.5rem]
+        ${props.className}
+      `}
+    >
       <picture>
         <source
           media="(min-width: 1440px)"

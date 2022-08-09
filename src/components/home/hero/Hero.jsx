@@ -1,5 +1,5 @@
 import NewText from '../../shared-components/NewText';
-import SeeProduct from '../../shared-components/SeeProduct';
+import SeeProductBtn from '../../shared-components/SeeProductBtn';
 import HeroImage from './HeroImage';
 
 const Hero = props => {
@@ -14,7 +14,7 @@ const Hero = props => {
           Experience natural, lifelike audio and exceptional build
           quality made for the passionate music enthusiast.
         </p>
-        <SeeProduct path="xx99-mark-two-headphones" orange />
+        <SeeProductBtn path="xx99-mark-two-headphones" orange />
       </div>
       <HeroImage />
     </section>

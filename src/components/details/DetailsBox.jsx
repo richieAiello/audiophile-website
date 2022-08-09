@@ -1,14 +1,11 @@
-import getProduct from '../../helpers/getProduct';
+import useFindProduct from '../../hooks/useFindProduct';
 
 const DetailsBox = props => {
-  const product = getProduct(props.slug);
+  const product = useFindProduct(props.slug);
   const includes = product?.includes;
 
   return (
-    <section
-      className="container text-black mb-[5.5rem]"
-      slug={props.slug}
-    >
+    <section className="mb-[5.5rem]" slug={props.slug}>
       <h2 className="heading mb-6">In the box</h2>
       <ul className="grid gap-y-2">
         {includes &&

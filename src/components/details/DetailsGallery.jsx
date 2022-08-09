@@ -1,14 +1,11 @@
-import getProduct from '../../helpers/getProduct';
+import useFindProduct from '../../hooks/useFindProduct';
 
 const DetailsGallery = props => {
-  const product = getProduct(props.slug);
+  const product = useFindProduct(props.slug);
   const gallery = product?.gallery;
 
   return (
-    <div
-      className="container grid gap-y-5 mb-[7.5rem]"
-      slug={props.slug}
-    >
+    <div className="grid gap-y-5 mb-[7.5rem]" slug={props.slug}>
       <picture>
         <source
           media="(min-width: 1440px)"

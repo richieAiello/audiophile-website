@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-const DetailsBackBtn = props => {
+const BackBtn = props => {
   const nav = useNavigate();
 
   return (
@@ -14,4 +14,4 @@ const DetailsBackBtn = props => {
   );
 };
 
-export default DetailsBackBtn;
+export default BackBtn;

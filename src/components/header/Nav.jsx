@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import Hamburger from './Hamburger';
 import NavMenu from './NavMenu';
-import CartBtn from './CartBtn';
-import Cart from './Cart';
+import ShoppingCart from './cart/ShoppingCart';
+import ShoppingCartBtn from './cart/ShoppingCartBtn';
 import Shadow from './Shadow';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import clsx from 'clsx';
@@ -94,8 +94,8 @@ const Nav = props => {
         onClick={handleShadowClick}
         ref={shadowRef}
       />
-      <CartBtn onClick={handleCartClick} disabled={loading} />
-      <Cart
+      <ShoppingCartBtn onClick={handleCartClick} disabled={loading} />
+      <ShoppingCart
         className={clsx({
           hidden: hideCart,
           grid: !hideCart,
