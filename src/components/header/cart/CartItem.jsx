@@ -1,5 +1,4 @@
 import { useCartDispatch } from '../../../context/CartContext';
-import { useState } from 'react';
 
 const CartItem = ({ cart, product }) => {
   const dispatch = useCartDispatch();
@@ -9,15 +8,16 @@ const CartItem = ({ cart, product }) => {
     return item.slug === product.slug;
   });
 
-  const newCart = cart.filter(item => {
-    return item.slug !== currentProduct.slug;
-  });
+  // Find index of current product in cart
+  const updateProduct = () => {
+    const indexOne = cart.indexOf(currentProduct);
+    const indexTwo = [indexOne + 1];
 
-  const replaceProduct = () => {
-    if (cart.length > 0) {
-    } else {
-      return [...currentProduct];
-    }
+    return [
+      ...cart.slice(0, indexOne),
+      currentProduct,
+      ...cart.slice(indexTwo),
+    ];
   };
 
   const handleDecrementClick = e => {
@@ -26,12 +26,14 @@ const CartItem = ({ cart, product }) => {
 
       dispatch({
         type: 'DECREMENT',
-        decrementProduct: [...newCart, currentProduct],
+        decrementProduct: updateProduct(),
       });
-
-      quantity--;
     }
     if (quantity === 1) {
+      const newCart = cart.filter(item => {
+        return item.slug !== currentProduct.slug;
+      });
+
       dispatch({
         type: 'REMOVE',
         removeProduct: [...newCart],
@@ -45,10 +47,8 @@ const CartItem = ({ cart, product }) => {
 
       dispatch({
         type: 'INCREMENT',
-        incrementProduct: [...newCart, currentProduct],
+        incrementProduct: updateProduct(),
       });
-
-      quantity++;
     }
   };
 

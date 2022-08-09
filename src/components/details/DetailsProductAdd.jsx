@@ -10,7 +10,7 @@ const DetailsProductAdd = ({ product }) => {
   const cart = useCartState();
   const dispatch = useCartDispatch();
 
-  const currentProduct = {
+  const productData = {
     slug: product?.slug,
     name: product?.cart.name,
     icon: product?.cart.icon,
@@ -18,12 +18,8 @@ const DetailsProductAdd = ({ product }) => {
     quantity: quantity,
   };
 
-  const matchedProduct = cart.find(
-    item => item.slug === currentProduct.slug
-  );
-
-  const newCart = cart.filter(
-    item => item.slug !== matchedProduct.slug
+  const currentProduct = cart.find(
+    item => item.slug === productData.slug
   );
 
   const handleIncrementClick = e => {
@@ -36,18 +32,21 @@ const DetailsProductAdd = ({ product }) => {
 
   const handleAddCartClick = e => {
     const addToCart = () => {
-      if (matchedProduct) {
-        currentProduct.quantity =
-          currentProduct.quantity + matchedProduct.quantity;
+      if (currentProduct) {
+        const newCart = cart.filter(
+          item => item.slug !== currentProduct.slug
+        );
+
+        productData.quantity = quantity + currentProduct.quantity;
 
         dispatch({
           type: 'UPDATE',
-          updateProduct: [...newCart, currentProduct],
+          updateProduct: [...newCart, productData],
         });
       } else {
         dispatch({
           type: 'ADD',
-          addProduct: currentProduct,
+          addProduct: productData,
         });
       }
     };
