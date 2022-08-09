@@ -53,17 +53,21 @@ const CartItem = ({ cart, product }) => {
   };
 
   return (
-    <div className="grid grid-flow-col grid-cols-[auto,1fr,1fr] items-center font-bold uppercase">
+    <div className="grid grid-cols-[1fr,auto] items-end sm:grid-flow-col sm:grid-cols-[auto,1fr,1fr] sm:items-center font-bold uppercase">
       <img
         src={product.icon}
         alt=""
-        className="rounded-lg w-16 h-16"
+        className="rounded-lg w-14 h-14 col-start-2 row-start-2 justify-self-end 
+        sm:h-16 sm:w-16 sm:col-auto sm:row-auto"
       />
-      <div className="ml-4">
-        <p>{product.name}</p>
+      <div className="sm:ml-4 sm:max-w-[7ch] md:max-w-none">
+        <p className="">{product.name}</p>
         <p className="opacity-50 text-[0.875rem]">{`$ ${product.price}`}</p>
       </div>
-      <div className="bg-grey flex justify-between items-center px-3 w-[min(100%,6rem)] h-10 justify-self-end">
+      <div
+        className="bg-grey flex justify-between items-center px-3 w-[min(100%,6rem)] h-10 row-start-2
+        sm:justify-self-end sm:row-auto"
+      >
         <button
           type="button"
           aria-label="Decrease quantity"
