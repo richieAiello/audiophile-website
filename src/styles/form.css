@@ -2,6 +2,7 @@
   width: 100%;
   display: grid;
   row-gap: 2rem;
+  margin-bottom: 7.25rem;
 }
 
 .form__wrapper {
@@ -9,4 +10,30 @@
   background-color: #fff;
   padding: 2rem 1.5rem;
   color: #000;
+}
+
+.form__wrapper--secondary {
+  display: grid;
+  row-gap: 1.5rem;
+}
+
+.form__wrapper--field {
+}
+
+.form__heading--section {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #d87d4a;
+  font-size: 0.8125rem;
+  letter-spacing: 0.93px;
+  margin-bottom: 1rem;
+}
+
+.form__label {
+}
+
+.form__input {
+}
+
+.form__error {
 }
