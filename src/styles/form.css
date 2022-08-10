@@ -1,0 +1,12 @@
+.form {
+  width: 100%;
+  display: grid;
+  row-gap: 2rem;
+}
+
+.form__wrapper {
+  border-radius: 0.5rem;
+  background-color: #fff;
+  padding: 2rem 1.5rem;
+  color: #000;
+}
