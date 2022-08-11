@@ -6,9 +6,6 @@ const CustomInput = ({
   className,
   placeholder,
   type,
-  value,
-  onChange,
-  onBlur,
 }) => {
   return (
     <div className="form__wrapper--field">
@@ -23,9 +20,6 @@ const CustomInput = ({
         type={type}
         className={`form__input ${className}`}
         placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-        onBlur={onBlur}
       />
     </div>
   );

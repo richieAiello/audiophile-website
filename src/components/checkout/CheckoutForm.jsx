@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import FormSection from './FormSection';
 import CustomInput from './CustomInput';
+import CustomRadio from './CustomRadio';
 import Summary from './Summary';
 import { initialValues, validation } from './formData';
+import cashIcon from '../../assets/cash.svg';
 
 const CheckoutForm = () => {
   // Toggle on radio button change to display either eMoney fields or cash on delivery text
@@ -11,8 +13,8 @@ const CheckoutForm = () => {
 
   return (
     <Formik
-      initialValues={initialValues}
-      validationSchema={validation}
+      initialValues={initialValues(cash)}
+      validationSchema={validation(cash)}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
@@ -20,7 +22,7 @@ const CheckoutForm = () => {
         }, 400);
       }}
     >
-      {({ values, handleChange, handleBlur }) => (
+      {props => (
         <Form className="form">
           <section className="form__wrapper">
             <h1 className="heading mb-8">Checkout</h1>
@@ -71,31 +73,41 @@ const CheckoutForm = () => {
               />
             </FormSection>
             <FormSection heading="Payment Details">
-              <span id="radio-group">Payment Methods</span>
-              <div
-                role="group"
-                aria-labelledby="radio-group"
-                className="form__radio"
-              >
-                <label className="form__input--radio">
-                  <Field
-                    type="radio"
-                    name="payment"
-                    value="eMoney"
-                    className="form__radio__select"
+              <CustomRadio
+                handleChange={props.handleChange}
+                state={cash}
+                setState={setCash}
+              />
+              {!cash ? (
+                <>
+                  <CustomInput
+                    name="eMoneyNumber"
+                    type="text"
+                    label="e-Money Number"
+                    placeholder="123456789"
                   />
-                  e-Money
-                </label>
-                <label className="form__input--radio ">
-                  <Field
-                    type="radio"
-                    name="payment"
-                    value="cash"
-                    className="form__radio__select"
+                  <CustomInput
+                    name="eMoneyPIN"
+                    type="text"
+                    label="e-Money PIN"
+                    placeholder="1234"
                   />
-                  Cash On Delivery
-                </label>
-              </div>
+                </>
+              ) : (
+                <div className="grid grid-flow-col gap-x-8">
+                  <img
+                    src={cashIcon}
+                    alt=""
+                    className="form__icon--cash"
+                  />
+                  <p className="font-normal opacity-50">
+                    The ‘Cash on Delivery’ option enables you to pay
+                    in cash when our delivery courier arrives at your
+                    residence. Just make sure your address is correct
+                    so that your order will not be cancelled.
+                  </p>
+                </div>
+              )}
             </FormSection>
           </section>
           <section className="form__wrapper">
