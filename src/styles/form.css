@@ -34,6 +34,16 @@
   margin-bottom: 1rem;
 }
 
+.form__radio {
+  width: 100%;
+  display: grid;
+  row-gap: 1rem;
+}
+
+.form__radio__select {
+  margin-right: 1rem;
+}
+
 .form__label {
   font-size: 0.875rem;
   line-height: 1rem;
@@ -41,11 +51,17 @@
   margin-bottom: 0.5rem;
 }
 
-.form__input {
+.form__input,
+.form__input--radio {
   border: 2px solid #cfcfcf;
   border-radius: 0.5rem;
   padding-left: 1.5rem;
   height: 3.5rem;
+}
+
+.form__input--radio {
+  display: flex;
+  align-items: center;
 }
 
 .form__error {

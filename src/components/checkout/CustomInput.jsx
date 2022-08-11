@@ -1,6 +1,15 @@
 import { Field, ErrorMessage } from 'formik';
 
-const StandardField = ({ name, label, placeholder, type }) => {
+const CustomInput = ({
+  name,
+  label,
+  className,
+  placeholder,
+  type,
+  value,
+  onChange,
+  onBlur,
+}) => {
   return (
     <div className="form__wrapper--field">
       <label htmlFor={name} className="form__label">
@@ -12,11 +21,14 @@ const StandardField = ({ name, label, placeholder, type }) => {
       <Field
         name={name}
         type={type}
-        className="form__input"
+        className={`form__input ${className}`}
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
+        onBlur={onBlur}
       />
     </div>
   );
 };
 
-export default StandardField;
+export default CustomInput;
