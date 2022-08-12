@@ -10,22 +10,28 @@ const OrderComplete = props => {
   const [confirm, setConfirm] = useState(false);
 
   return (
-    <div className="flex items-center h-screen w-screen fixed z-50 left-0 top-0 bg-[rgba(0,0,0,.4)]">
-      <div className="container p-8 rounded-lg bg-white max-h-[calc(100vh-12rem)] overflow-y-scroll">
+    <div className="flex h-screen w-screen fixed z-50 left-0 top-0 bg-[rgba(0,0,0,.4)]">
+      <div className="w-[min(100%-3rem,540px)] m-auto p-8 rounded-lg bg-white max-h-[calc(100vh-12rem)] overflow-y-scroll md:p-12">
         {confirm ? (
           <>
             <img src={icon} alt="" className="h-16 w-16" />
-            <h3 className="font-bold text-[1.5rem] leading-7 text-black uppercase tracking-[0.86px] mt-6 mb-4">
+            <h3
+              className="font-bold text-2xl text-black uppercase tracking-[0.86px] mt-6 mb-4 
+              md:mb-6"
+            >
               Thank you for your order
             </h3>
-            <p className="opacity-50 mb-6">
+            <p className="opacity-50 mb-6 md:mb-8">
               You will receive an email confirmation shortly.
             </p>
           </>
         ) : (
           <>
             <BackBtn />
-            <h3 className="font-bold text-[1.5rem] leading-7 text-black uppercase tracking-[0.86px] mb-4">
+            <h3
+              className="font-bold text-2xl text-black uppercase tracking-[0.86px] mb-6
+              max-w-[14ch] md:mb-8"
+            >
               Please confirm your order
             </h3>
           </>
