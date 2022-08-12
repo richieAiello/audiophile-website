@@ -102,6 +102,7 @@ const Nav = props => {
           'slide-up': animateIn && cartVisibility,
           'slide-down': animateOut && !cartVisibility,
         })}
+        onClick={handleCartClick}
       />
     </nav>
   );
