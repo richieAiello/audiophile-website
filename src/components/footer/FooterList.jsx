@@ -2,7 +2,7 @@ import FooterItem from './FooterItem';
 
 const FooterList = props => {
   return (
-    <ul className="grid gap-y-4">
+    <ul className="grid gap-y-4 md:grid-flow-col md:row-start-2 md:gap-x-8 md:w-max">
       <FooterItem path="/" text="Home" />
       <FooterItem path="/category/headphones" text="Headphones" />
       <FooterItem path="/category/speakers" text="Speakers" />
