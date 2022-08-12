@@ -2,7 +2,10 @@ import SeeProductBtn from '../../shared-components/SeeProductBtn';
 
 const ShowcaseYx1 = props => {
   return (
-    <section className="grid gap-y-6">
+    <section
+      className="grid gap-y-6 md:grid-flow-col md:gap-x-3 
+      md:grid-rows-[320px] md:grid-cols-[1fr,1fr]"
+    >
       <picture>
         <source
           media="(min-width: 1440px)"
@@ -15,10 +18,10 @@ const ShowcaseYx1 = props => {
         <img
           src="/home/mobile/image-earphones-yx1.jpg"
           alt=""
-          className="h-[200px] w-full object-cover rounded-lg"
+          className="h-[200px] w-full object-cover rounded-lg md:h-full"
         />
       </picture>
-      <div className="flex flex-col items-start justify-center pl-6 h-[200px] bg-grey rounded-lg">
+      <div className="flex flex-col items-start justify-center pl-6 h-[200px] bg-grey rounded-lg md:h-full md:pl-10">
         <h2 className="heading--wide text-black mb-8">
           Yx1 Earphones
         </h2>

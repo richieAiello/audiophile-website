@@ -3,7 +3,7 @@ const BestGear = props => {
     <section
       className={`
         flex flex-col items-center text-center mb-[7.5rem]
-        ${props.className}
+        ${props.className} 
       `}
     >
       <picture>
@@ -18,14 +18,14 @@ const BestGear = props => {
         <img
           src="/shared-images/mobile/image-best-gear.jpg"
           alt=""
-          className="rounded-lg mb-10 h-[320px] w-screen object-cover object-top"
+          className="rounded-lg mb-10 h-[320px] w-screen object-cover object-top md:mb-16"
         />
       </picture>
-      <h2 className="heading--product max-w-[17ch] mb-8">
+      <h2 className="heading--product max-w-[17ch] mb-8 md:max-w-[22ch]">
         Bringing you the <span className="text-orange">best </span>
         audio gear
       </h2>
-      <p className="opacity-50">
+      <p className="opacity-50 md:max-w-[573px]">
         Located at the heart of New York City, Audiophile is the
         premier store for high end headphones, earphones, speakers,
         and audio accessories. We have a large showroom and luxury
