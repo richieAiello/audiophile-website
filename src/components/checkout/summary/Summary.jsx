@@ -8,7 +8,7 @@ const Summary = props => {
 
   return (
     <>
-      <h3>Summary</h3>
+      <h3 className="text-[1.125rem] uppercase">Summary</h3>
       <ItemWrapper cart={cart} />
       <Calculations cart={cart} />
       <PayBtn />
