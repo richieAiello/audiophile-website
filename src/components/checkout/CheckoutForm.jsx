@@ -3,18 +3,17 @@ import { Formik, Form, Field } from 'formik';
 import FormSection from './FormSection';
 import CustomInput from './CustomInput';
 import CustomRadio from './CustomRadio';
-import Summary from './Summary';
-import { initialValues, validation } from './formData';
+import Summary from './summary/Summary';
+import { initialValues, validate } from './formData';
 import cashIcon from '../../assets/cash.svg';
 
 const CheckoutForm = () => {
-  // Toggle on radio button change to display either eMoney fields or cash on delivery text
   const [cash, setCash] = useState(false);
 
   return (
     <Formik
-      initialValues={initialValues(cash)}
-      validationSchema={validation(cash)}
+      initialValues={initialValues}
+      validationSchema={validate(cash)}
       onSubmit={(values, { setSubmitting }) => {
         setTimeout(() => {
           alert(JSON.stringify(values, null, 2));
@@ -112,9 +111,6 @@ const CheckoutForm = () => {
           </section>
           <section className="form__wrapper">
             <Summary />
-            <button type="submit" className="form__submit">
-              Submit
-            </button>
           </section>
         </Form>
       )}
