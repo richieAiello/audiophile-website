@@ -7,8 +7,10 @@ const DetailsSuggestions = props => {
 
   return (
     <section className="mb-[10.75rem]" slug={props.slug}>
-      <h2 className="heading text-center mb-10">You may also like</h2>
-      <div className="grid gap-y-14">
+      <h2 className="heading text-center mb-10 md:mb-14">
+        You may also like
+      </h2>
+      <div className="grid gap-y-14 md:grid-flow-col md:gap-x-3">
         <DetailsSuggestionsCard item={suggestions?.[0]} />
         <DetailsSuggestionsCard item={suggestions?.[1]} />
         <DetailsSuggestionsCard item={suggestions?.[2]} />

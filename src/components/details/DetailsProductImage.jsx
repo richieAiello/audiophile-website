@@ -8,7 +8,7 @@ const DetailsProductImage = ({ product }) => {
       <img
         src={image?.mobile}
         alt=""
-        className="rounded-lg h-[327px] w-full object-cover"
+        className="rounded-lg h-[327px] w-full object-cover md:h-full"
       />
     </picture>
   );

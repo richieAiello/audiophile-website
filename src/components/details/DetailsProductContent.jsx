@@ -3,12 +3,12 @@ import clsx from 'clsx';
 
 const DetailsProductContent = ({ product }) => {
   return (
-    <div className="mb-6">
+    <div className="mb-6 md:mb-8 ">
       {product?.new && <NewText className="mt-8" />}
       <h1
         className={`heading--product mb-6 md:mb-8 ${clsx({
           'mt-6 md:mt-4': product?.new,
-          'mt-10 md:[4.875rem] lg:mt-[7.875rem]': !product?.new,
+          'mt-10 md:mt-0': !product?.new,
         })}`}
       >
         {product?.name}
