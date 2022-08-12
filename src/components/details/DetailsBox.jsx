@@ -5,7 +5,10 @@ const DetailsBox = props => {
   const includes = product?.includes;
 
   return (
-    <section className="mb-[5.5rem]" slug={props.slug}>
+    <section
+      className="mb-[5.5rem] md:mb-[7.5rem] md:grid md:grid-cols-[1fr,1fr]"
+      slug={props.slug}
+    >
       <h2 className="heading mb-6">In the box</h2>
       <ul className="grid gap-y-2">
         {includes &&

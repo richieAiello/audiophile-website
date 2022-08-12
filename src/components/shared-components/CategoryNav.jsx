@@ -5,6 +5,7 @@ const CategoryNav = props => {
     <div
       className={`
         grid gap-y-[4.25rem] mb-[7.5rem] cursor-pointer
+        md:grid-flow-col md:gap-x-[0.625rem]
         ${props.className}
       `}
     >

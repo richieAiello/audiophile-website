@@ -2,7 +2,7 @@
   width: 100%;
   display: grid;
   row-gap: 2rem;
-  margin-bottom: 7.25rem;
+  margin-bottom: 6.25rem;
   font-weight: 700;
 }
 
@@ -69,13 +69,4 @@
   padding-left: 0.75rem;
   font-size: 0.875rem;
   color: #cd2c2c;
-}
-
-.accent::before {
-  content: '';
-  display: block;
-  height: 5px;
-  width: 100%;
-  background-color: #000;
-  margin-bottom: 0.75rem;
 }

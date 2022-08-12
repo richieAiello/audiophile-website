@@ -32,7 +32,7 @@ const CheckoutForm = () => {
           }}
         >
           {props => (
-            <Form className="form">
+            <Form className="form md:mb-[7.5rem]">
               <section className="form__wrapper">
                 <h1 className="heading mb-8">Checkout</h1>
                 <FormSection heading="Billing Details">
@@ -59,8 +59,9 @@ const CheckoutForm = () => {
                   <CustomInput
                     name="address"
                     type="text"
-                    label="Shipping Address"
+                    label="Address"
                     placeholder="1337 Audio Avenue"
+                    colSpan
                   />
                   <CustomInput
                     name="city"
@@ -103,7 +104,7 @@ const CheckoutForm = () => {
                       />
                     </>
                   ) : (
-                    <div className="grid grid-flow-col gap-x-8">
+                    <div className="grid grid-flow-col gap-x-8 items-center md:col-span-2">
                       <img
                         src={cashIcon}
                         alt=""

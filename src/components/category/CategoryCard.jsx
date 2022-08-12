@@ -19,18 +19,20 @@ const CategoryCard = ({ slug }) => {
         <img
           src={product?.categoryImage.mobile}
           alt=""
-          className="h-[352px] w-full object-cover rounded-lg mb-8"
+          className="h-[352px] w-full object-cover rounded-lg mb-8 md:mb-[3.25rem]"
         />
       </picture>
-      <div className="grid gap-y-6 text-center justify-items-center">
-        {product?.new && <NewText />}
+      <div className="grid text-center justify-items-center">
+        {product?.new && <NewText className="mb-6 md:mb-4" />}
         <h2
           className="uppercase font-bold text-[1.75rem] leading-[2.375rem] 
-          tracking-[0.0625rem] max-w-[12ch]"
+          tracking-[0.0625rem] max-w-[12ch] mb-6 md:mb-8"
         >
           {product?.name}
         </h2>
-        <p>{product?.description}</p>
+        <p className="mb-6 md:max-w-[573px]">
+          {product?.description}
+        </p>
         <SeeProductBtn path={slug} orange />
       </div>
     </section>

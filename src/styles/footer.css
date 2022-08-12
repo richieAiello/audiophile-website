@@ -11,6 +11,13 @@
   margin-inline: auto;
 }
 
+@media (min-width: 768px) {
+  .accent::before {
+    right: unset;
+    margin-inline: unset;
+  }
+}
+
 .social-link__icon path {
   transition: all 250ms;
 }

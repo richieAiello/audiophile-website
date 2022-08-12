@@ -5,7 +5,11 @@ const DetailsGallery = props => {
   const gallery = product?.gallery;
 
   return (
-    <div className="grid gap-y-5 mb-[7.5rem]" slug={props.slug}>
+    <div
+      className="grid gap-y-5 mb-[7.5rem] md:gap-x-[1.125rem] md:grid-cols-[277px,1fr]
+      md:grid-rows-[auto, auto]"
+      slug={props.slug}
+    >
       <picture>
         <source
           media="(min-width: 1440px)"
@@ -21,7 +25,7 @@ const DetailsGallery = props => {
           className="object-cover w-full rounded-lg h-[174px] object-top"
         />
       </picture>
-      <picture>
+      <picture className="md:col-start-1">
         <source
           media="(min-width: 1440px)"
           srcSet={gallery?.second.desktop}
@@ -36,7 +40,7 @@ const DetailsGallery = props => {
           className="object-cover w-full rounded-lg h-[174px] object-top"
         />
       </picture>
-      <picture>
+      <picture className="md:col-start-2 md:row-start-1 md:row-span-2">
         <source
           media="(min-width: 1440px)"
           srcSet={gallery?.third.desktop}
@@ -48,7 +52,7 @@ const DetailsGallery = props => {
         <img
           src={gallery?.third.mobile}
           alt=""
-          className="object-cover w-full rounded-lg h-[384px]"
+          className="object-cover w-full rounded-lg h-[368px]"
         />
       </picture>
     </div>
