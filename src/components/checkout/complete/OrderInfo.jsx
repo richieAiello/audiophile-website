@@ -17,11 +17,11 @@ const OrderInfo = props => {
     <div className="mb-6">
       <div className="bg-grey rounded-t-lg p-6">
         <div>
-          <OrderItem product={cart[0]} />
+          <OrderItem item={cart[0]} />
           {!hidden && (
             <>
               {remainingItems.map(item => {
-                return <OrderItem key={item.slug} product={item} />;
+                return <OrderItem key={item.slug} item={item} />;
               })}
             </>
           )}

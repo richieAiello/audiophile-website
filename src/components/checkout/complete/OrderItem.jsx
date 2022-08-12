@@ -1,4 +1,8 @@
-const OrderItem = ({ product }) => {
+import { useState } from 'react';
+
+const OrderItem = ({ item }) => {
+  const [product, SetProduct] = useState(item);
+
   return (
     <div className="grid grid-flow-col grid-cols-[auto,1fr,auto] items-start font-bold uppercase mb-4">
       <img
