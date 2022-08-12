@@ -5,7 +5,7 @@ import CartContents from './CartContents';
 import CartTotal from './CartTotal';
 import CheckoutBtn from './CheckoutBtn';
 
-const ShoppingCart = props => {
+const ShoppingCart = ({ className, onClick }) => {
   const cart = useCartState();
 
   return (
@@ -14,14 +14,14 @@ const ShoppingCart = props => {
         container absolute z-10 top-[7.125rem] left-0 right-0 mx-auto rounded-lg 
         max-h-[calc(100vh-8.625rem)] overflow-y-scroll bg-white py-8 px-7
         grid grid-cols-[1fr,1fr]
-        ${props.className}
+        ${className}
       `}
     >
       <CartCount cart={cart} />
       <EmptyCartBtn />
       <CartContents cart={cart} />
       <CartTotal cart={cart} />
-      <CheckoutBtn />
+      <CheckoutBtn onClick={onClick} />
     </div>
   );
 };

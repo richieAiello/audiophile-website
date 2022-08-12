@@ -10,7 +10,7 @@ const Checkout = props => {
     <main className="container mt-[6.625rem]">
       <BackBtn />
       {cart.length === 0 ? (
-        <p>
+        <p className="mb-8 font-bold text-xl">
           Please add items to your cart before visiting this page.
         </p>
       ) : (
