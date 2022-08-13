@@ -57,6 +57,8 @@ const Nav = props => {
   const handleLinkClick = e => {
     if (window.innerWidth < 1440) {
       handleHamburgerClick();
+    } else {
+      cartVisibility && handleCartClick();
     }
   };
 
@@ -74,7 +76,7 @@ const Nav = props => {
         onClick={handleHamburgerClick}
         disabled={loading}
       />
-      <Logo className="mx-auto md:ml-12" />
+      <Logo className="mx-auto md:ml-12 lg:mx-0" />
       <NavMenu
         className={clsx({
           hidden: hideNav,

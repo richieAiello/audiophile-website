@@ -7,7 +7,8 @@ const BackBtn = props => {
     <button
       type="button"
       onClick={() => nav(-1)}
-      className="text-black opacity-50 mb-6 hover:underline focus:underline"
+      className="text-black opacity-50 mb-6 hover:underline focus:underline
+      lg:mb-14"
     >
       Go Back
     </button>

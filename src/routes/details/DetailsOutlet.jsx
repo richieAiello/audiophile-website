@@ -14,8 +14,10 @@ const DetailsOutlet = props => {
   return (
     <>
       <DetailsProductCard slug={product.slug} />
-      <DetailsFeatures slug={product.slug} />
-      <DetailsBox slug={product.slug} />
+      <div className="lg:grid lg:grid-cols-[635px,350px] lg:justify-between lg:mb-40">
+        <DetailsFeatures slug={product.slug} />
+        <DetailsBox slug={product.slug} />
+      </div>
       <DetailsGallery slug={product.slug} />
       <DetailsSuggestions slug={product.slug} />
     </>

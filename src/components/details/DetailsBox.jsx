@@ -6,7 +6,7 @@ const DetailsBox = props => {
 
   return (
     <section
-      className="mb-[5.5rem] md:mb-[7.5rem] md:grid md:grid-cols-[1fr,1fr]"
+      className="mb-[5.5rem] md:mb-[7.5rem] md:grid md:grid-cols-[1fr,1fr] lg:block"
       slug={props.slug}
     >
       <h2 className="heading mb-6">In the box</h2>

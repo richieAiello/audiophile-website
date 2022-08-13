@@ -4,7 +4,7 @@ const ShowcaseYx1 = props => {
   return (
     <section
       className="grid gap-y-6 md:grid-flow-col md:gap-x-3 
-      md:grid-rows-[320px] md:grid-cols-[1fr,1fr]"
+      md:grid-rows-[320px] md:grid-cols-[1fr,1fr] lg:gap-x-8"
     >
       <picture>
         <source
@@ -21,7 +21,10 @@ const ShowcaseYx1 = props => {
           className="h-[200px] w-full object-cover rounded-lg md:h-full"
         />
       </picture>
-      <div className="flex flex-col items-start justify-center pl-6 h-[200px] bg-grey rounded-lg md:h-full md:pl-10">
+      <div
+        className="flex flex-col items-start justify-center pl-6 h-[200px] bg-grey rounded-lg 
+        md:h-full md:pl-10 lg:pl-24"
+      >
         <h2 className="heading--wide text-black mb-8">
           Yx1 Earphones
         </h2>

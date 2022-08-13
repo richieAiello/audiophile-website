@@ -9,7 +9,7 @@ const Home = props => {
       <Hero />
       <CategoryNav className="container md:mb-24" />
       <Showcase />
-      <BestGear className="container md:mb-24" />
+      <BestGear className="container md:mb-24 lg:mb-52" />
     </main>
   );
 };

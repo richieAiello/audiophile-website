@@ -7,7 +7,7 @@ const DetailsGallery = props => {
   return (
     <div
       className="grid gap-y-5 mb-[7.5rem] md:gap-x-[1.125rem] md:grid-cols-[277px,1fr]
-      md:grid-rows-[auto, auto]"
+      md:grid-rows-[auto, auto] lg:grid-cols-[445px,1fr] lg:gap-8 lg:mb-40"
       slug={props.slug}
     >
       <picture>
@@ -22,7 +22,7 @@ const DetailsGallery = props => {
         <img
           src={gallery?.first.mobile}
           alt=""
-          className="object-cover w-full rounded-lg h-[174px] object-top"
+          className="object-cover w-full rounded-lg h-[174px] object-top lg:h-[280px]"
         />
       </picture>
       <picture className="md:col-start-1">
@@ -37,7 +37,7 @@ const DetailsGallery = props => {
         <img
           src={gallery?.second.mobile}
           alt=""
-          className="object-cover w-full rounded-lg h-[174px] object-top"
+          className="object-cover w-full rounded-lg h-[174px] object-top lg:h-[280px]"
         />
       </picture>
       <picture className="md:col-start-2 md:row-start-1 md:row-span-2">
@@ -52,7 +52,7 @@ const DetailsGallery = props => {
         <img
           src={gallery?.third.mobile}
           alt=""
-          className="object-cover w-full rounded-lg h-[368px]"
+          className="object-cover w-full rounded-lg h-[368px] lg:h-[592px]"
         />
       </picture>
     </div>

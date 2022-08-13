@@ -2,7 +2,10 @@ import SeeProductBtn from '../../shared-components/SeeProductBtn';
 
 const ShowcaseZx7 = props => {
   return (
-    <section className="relative h-[320px] pl-6 flex flex-col justify-center items-start md:pl-[3.875rem]">
+    <section
+      className="relative h-[320px] pl-6 flex flex-col justify-center items-start 
+      md:pl-[3.875rem] lg:pl-24"
+    >
       <h2 className="heading--wide text-black mb-8">Zx7 Speaker</h2>
       <SeeProductBtn path="zx7-speaker" clear />
       <picture>

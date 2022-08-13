@@ -77,6 +77,12 @@
   width: min(100% - 3rem, 375px);
 }
 
+.container--hero {
+  height: 100%;
+  width: 100%;
+  margin-inline: auto;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 689px;
@@ -84,7 +90,8 @@
 }
 
 @media (min-width: 1440px) {
-  .container {
+  .container,
+  .container--hero {
     width: 1110px;
   }
 }

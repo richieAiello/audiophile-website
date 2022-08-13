@@ -6,7 +6,11 @@ const CategoryCard = ({ slug }) => {
   const product = useFindProduct(slug);
 
   return (
-    <section className="container" slug={slug}>
+    <section
+      className="container lg:flex lg:even:flex-row-reverse lg:items-center
+      lg:justify-between"
+      slug={slug}
+    >
       <picture>
         <source
           media="(min-width: 1440px)"
@@ -19,10 +23,14 @@ const CategoryCard = ({ slug }) => {
         <img
           src={product?.categoryImage.mobile}
           alt=""
-          className="h-[352px] w-full object-cover rounded-lg mb-8 md:mb-[3.25rem]"
+          className="h-[352px] w-full object-cover rounded-lg mb-8 
+          md:mb-[3.25rem] lg:h-[560px] lg:w-[540px] lg:mb-0"
         />
       </picture>
-      <div className="grid text-center justify-items-center">
+      <div
+        className="grid text-center justify-items-center 
+        lg:text-left lg:justify-items-start lg:w-[445px]"
+      >
         {product?.new && <NewText className="mb-6 md:mb-4" />}
         <h2
           className="uppercase font-bold text-[1.75rem] leading-[2.375rem] 
@@ -30,7 +38,7 @@ const CategoryCard = ({ slug }) => {
         >
           {product?.name}
         </h2>
-        <p className="mb-6 md:max-w-[573px]">
+        <p className="mb-6 md:max-w-[573px] lg:mb-10">
           {product?.description}
         </p>
         <SeeProductBtn path={slug} orange />

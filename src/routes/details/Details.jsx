@@ -5,7 +5,10 @@ import BestGear from '../../components/shared-components/BestGear';
 
 const Details = props => {
   return (
-    <main className="container text-black mt-[6.625rem] md:mt-[7.625rem]">
+    <main
+      className="container text-black mt-[6.625rem] 
+      md:mt-[7.625rem] lg:mt-40"
+    >
       <BackBtn />
       <Outlet />
       <CategoryNav />
