@@ -13,7 +13,7 @@ const HeroImage = props => {
         src="/home/mobile/image-header.jpg"
         alt=""
         className="absolute rounded-3xl z-0 mx-auto right-0 left-0 top-0 h-full w-[375px] object-cover object-bottom
-        md:w-[689px]"
+        md:w-[689px] lg:w-auto lg:h-[100%] lg:bottom-0 lg:m-auto lg:left-[unset]"
       />
     </picture>
   );

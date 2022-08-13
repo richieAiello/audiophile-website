@@ -66,7 +66,7 @@ const Nav = props => {
   };
 
   return (
-    <nav className="container flex items-center">
+    <nav className="container flex items-center lg:justify-between">
       <Hamburger
         className={clsx({
           flip: navVisibility,
@@ -74,7 +74,7 @@ const Nav = props => {
         onClick={handleHamburgerClick}
         disabled={loading}
       />
-      <Logo className="mx-auto md:ml-12" />
+      <Logo className="mx-auto md:ml-12 lg:mx-0" />
       <NavMenu
         className={clsx({
           hidden: hideNav,
