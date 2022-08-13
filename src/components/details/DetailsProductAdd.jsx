@@ -4,6 +4,7 @@ import {
   useCartState,
   useCartDispatch,
 } from '../../context/CartContext';
+import QuantityBtn from '../shared-components/QuantityBtn';
 
 const DetailsProductAdd = ({ product }) => {
   const [quantity, setQuantity] = useState(1);
@@ -61,32 +62,15 @@ const DetailsProductAdd = ({ product }) => {
         price={(product?.price * quantity).toLocaleString()}
       />
       <div className="grid gap-y-4 w-max sm:grid-flow-col sm:gap-x-4">
-        <div className="flex items-center justify-between px-4 h-12 w-[7.5rem] bg-grey">
-          <button
-            type="button"
-            aria-label="Subtract item from total."
-            onClick={handleDecrementClick}
-            // disabled={props.decrementDisabled}
-            className="btn text-black hover:text-orange focus:text-orange"
-          >
-            -
-          </button>
-          <span className="btn">{quantity}</span>
-          <button
-            type="button"
-            aria-label="Add item to total."
-            onClick={handleIncrementClick}
-            // disabled={props.incrementDisabled}
-            className="btn text-black hover:text-orange focus:text-orange"
-          >
-            +
-          </button>
-        </div>
-
+        <QuantityBtn
+          quantity={quantity}
+          onDecrementClick={handleDecrementClick}
+          onIncrementClick={handleIncrementClick}
+          className="w-[7.5rem] px-4"
+        />
         <button
           type="button"
           onClick={handleAddCartClick}
-          // disabled={props.addCartDisabled}
           className="btn py-[0.9375rem] pl-[2.125rem] pr-[1.9375rem] bg-orange text-white
         hover:bg-light-orange focus:bg-light-orange hover:text-hero-black focus:text-hero-black"
         >

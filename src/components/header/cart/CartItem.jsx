@@ -1,4 +1,5 @@
 import { useCartDispatch } from '../../../context/CartContext';
+import QuantityBtn from '../../shared-components/QuantityBtn';
 
 const CartItem = ({ cart, product }) => {
   const dispatch = useCartDispatch();
@@ -64,28 +65,12 @@ const CartItem = ({ cart, product }) => {
         <p className="">{product.name}</p>
         <p className="opacity-50 text-[0.875rem]">{`$ ${product.price}`}</p>
       </div>
-      <div
-        className="bg-grey flex justify-between items-center px-3 w-[min(100%,6rem)] h-10 row-start-2
-        sm:justify-self-end sm:row-auto"
-      >
-        <button
-          type="button"
-          aria-label="Decrease quantity"
-          onClick={handleDecrementClick}
-          className="duration-[250ms] hover:text-orange focus:text-orange"
-        >
-          -
-        </button>
-        <span className="">{quantity}</span>
-        <button
-          type="button"
-          aria-label="Increase quantity"
-          onClick={handleIncrementClick}
-          className="duration-[250ms] hover:text-orange focus:text-orange"
-        >
-          +
-        </button>
-      </div>
+      <QuantityBtn
+        quantity={quantity}
+        onDecrementClick={handleDecrementClick}
+        onIncrementClick={handleIncrementClick}
+        className="row-start-2 w-[6.5rem] px-3 sm:justify-self-end sm:row-auto"
+      />
     </div>
   );
 };
