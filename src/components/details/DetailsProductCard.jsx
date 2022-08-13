@@ -8,12 +8,15 @@ const DetailsProductCard = ({ slug }) => {
 
   return (
     <div
-      className="mb-[5.5rem] md:mb-[7.5rem] md:grid md:gap-x-[4.375rem] 
-      md:grid-cols-[280px,1fr] md:h-[480px]"
+      className="mb-[5.5rem] md:mb-[7.5rem] md:flex md:justify-between
+      md:items-end lg:mb-40"
       slug={slug}
     >
       <DetailsProductImage product={product} />
-      <div className="md:self-end md:pb-[2.8125rem]">
+      <div
+        className="md:w-[340px] md:pb-[2.8125rem] 
+        lg:pb-[4.5rem] lg:w-[445px]"
+      >
         <DetailsProductContent product={product} />
         <DetailsProductAdd product={product} />
       </div>
