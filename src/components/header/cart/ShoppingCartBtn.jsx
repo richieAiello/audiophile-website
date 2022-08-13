@@ -5,29 +5,31 @@ const ShoppingCartBtn = props => {
   const cart = useCartState();
 
   return (
-    <button
-      type="button"
-      aria-label="Open shopping cart."
-      className={`cursor-pointer flex items-center relative md:ml-auto 
-        ${props.className}
-      `}
-      onClick={props.onClick}
-      disabled={props.disabled}
-    >
+    <div className="relative md:ml-auto">
+      <button
+        type="button"
+        aria-label="Open shopping cart."
+        className={`cursor-pointer
+          ${props.className}
+        `}
+        onClick={props.onClick}
+        disabled={props.disabled}
+      >
+        <Icon className="inline icon-cart" />
+      </button>
       {cart.length > 0 && (
-        <span
-          className="absolute font-bold bg-light-orange pl-[1.75px] pt-[1px] h-7 w-7 rounded-full
-          -right-8"
+        <div
+          className="absolute font-bold text-white text-[0.875rem] leading-none w-max h-max bottom-5 -right-2
+          sm:bg-orange sm:-bottom-1 sm:right-8 sm:h-8 sm:w-8 sm:flex sm:items-center 
+          sm:justify-center sm:rounded-full"
+          aria-hidden
         >
-          <span className="align-middle">
-            {cart.reduce((total, current) => {
-              return total + current.quantity;
-            }, 0)}
-          </span>
-        </span>
+          {cart.reduce((total, current) => {
+            return total + current.quantity;
+          }, 0)}
+        </div>
       )}
-      <Icon className="icon-cart" />
-    </button>
+    </div>
   );
 };
 
