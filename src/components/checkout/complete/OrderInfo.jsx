@@ -28,7 +28,7 @@ const OrderInfo = props => {
               })}
             </>
           )}
-          {moreItems && (
+          {moreItems.length > 0 && (
             <div
               className="flex flex-col before:h-[1px] before:w-full 
               before:bg-[rgba(0,0,0,.08)] before:mb-3"
@@ -39,7 +39,7 @@ const OrderInfo = props => {
                 className="btn self-center hover:text-orange focus:text-orange"
                 tabIndex="1"
               >
-                {moreItems
+                {hidden
                   ? `View ${
                       moreItems.length > 1
                         ? `(${moreItems.length}) More Items`
