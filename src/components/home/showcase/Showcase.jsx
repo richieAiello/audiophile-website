@@ -4,7 +4,10 @@ import ShowcaseYx1 from './ShowcaseYx1';
 
 const Showcase = props => {
   return (
-    <div className="container grid gap-y-6 mb-[7.5rem] md:gap-y-8 md:mb-24">
+    <div
+      className="container grid gap-y-6 mb-[7.5rem] 
+      md:gap-y-8 md:mb-24 lg:gap-y-12"
+    >
       <ShowcaseZx9 />
       <ShowcaseZx7 />
       <ShowcaseYx1 />
