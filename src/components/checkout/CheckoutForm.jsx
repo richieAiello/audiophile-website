@@ -32,10 +32,17 @@ const CheckoutForm = () => {
           }}
         >
           {props => (
-            <Form className="form md:mb-[7.5rem]">
-              <section className="form__wrapper">
-                <h1 className="heading mb-8">Checkout</h1>
-                <FormSection heading="Billing Details">
+            <Form
+              className="form md:mb-[7.5rem] lg:grid 
+              lg:grid-cols-[730px,1fr] lg:gap-x-8 lg:items-start
+              lg:mb-[8.75rem]"
+            >
+              <section className="form__wrapper md:p-8">
+                <h1 className="heading mb-8 md:mb-10">Checkout</h1>
+                <FormSection
+                  className="mb-8 md:mb-14"
+                  heading="Billing Details"
+                >
                   <CustomInput
                     name="name"
                     type="text"
@@ -55,7 +62,10 @@ const CheckoutForm = () => {
                     placeholder="(555) 555-5555"
                   />
                 </FormSection>
-                <FormSection heading="Shipping Info">
+                <FormSection
+                  className="mb-8 md:mb-14"
+                  heading="Shipping Info"
+                >
                   <CustomInput
                     name="address"
                     type="text"
