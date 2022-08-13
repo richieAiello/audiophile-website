@@ -7,8 +7,8 @@ const BackBtn = props => {
     <button
       type="button"
       onClick={() => nav(-1)}
-      className="text-black opacity-50 mb-6 hover:underline focus:underline
-      lg:mb-14"
+      className="text-hero-black font-bold mb-6 duration-[250ms]
+      hover:text-orange focus:text-orange lg:mb-14"
     >
       Go Back
     </button>
