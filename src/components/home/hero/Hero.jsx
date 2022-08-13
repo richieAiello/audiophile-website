@@ -6,9 +6,11 @@ const Hero = props => {
   return (
     <section className="h-[510px] w-full bg-hero-black mb-[5.75rem] md:mb-[9.25rem] md:h-[640px]">
       <div
-        className="container--hero relative bg-[url(./assets/home/tablet/hero.jpg)]
-        bg-[center_top_-3.5rem] bg-no-repeat bg-[length:600px] md:bg-[length:800px]
-        md:bg-[center_top_-5.5rem]"
+        className="container--hero bg-[url(./assets/home/hero-small.jpg)]
+        bg-[center_top_-3.5rem] bg-no-repeat bg-[length:600px] 
+        md:bg-[length:800px] md:bg-[center_top_-5.5rem] 
+        lg:bg-[length:1600px] lg:bg-[right_-10rem_bottom_-2.5rem] lg:bg-[url(./assets/home/hero.jpg)]
+        lg:overflow-x-visible"
       >
         <div
           className="flex flex-col items-center max-w-[320px] mx-auto relative z-10 text-center text-white pt-[6.75rem]

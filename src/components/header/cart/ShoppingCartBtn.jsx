@@ -5,7 +5,7 @@ const ShoppingCartBtn = props => {
     <button
       type="button"
       aria-label="Open shopping cart."
-      className={`cursor-pointer md:ml-auto lg:ml-0
+      className={`cursor-pointer md:ml-auto
         ${props.className}
       `}
       onClick={props.onClick}

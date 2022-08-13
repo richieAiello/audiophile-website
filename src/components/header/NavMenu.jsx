@@ -6,7 +6,7 @@ const NavMenu = props => {
       className={`
         bg-hero-black absolute z-10 top-[5.625rem] left-0 h-max w-screen
         ${props.className}
-        lg:block lg:static lg:w-max lg:mx-auto
+        lg:block lg:static lg:w-max lg:ml-[12.5rem]
       `}
     >
       <ul

@@ -57,6 +57,8 @@ const Nav = props => {
   const handleLinkClick = e => {
     if (window.innerWidth < 1440) {
       handleHamburgerClick();
+    } else {
+      cartVisibility && handleCartClick();
     }
   };
 
@@ -66,7 +68,7 @@ const Nav = props => {
   };
 
   return (
-    <nav className="container flex items-center lg:justify-between">
+    <nav className="container flex items-center">
       <Hamburger
         className={clsx({
           flip: navVisibility,
