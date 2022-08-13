@@ -6,7 +6,7 @@ const Showcase = props => {
   return (
     <div
       className="container grid gap-y-6 mb-[7.5rem] 
-      md:gap-y-8 md:mb-24 lg:gap-y-12"
+      md:gap-y-8 md:mb-24 lg:gap-y-12 lg:mb-[12.5rem]"
     >
       <ShowcaseZx9 />
       <ShowcaseZx7 />
