@@ -1,10 +1,9 @@
 import NewText from '../../shared-components/NewText';
 import SeeProductBtn from '../../shared-components/SeeProductBtn';
-// import HeroImage from './HeroImage';
 
 const Hero = props => {
   return (
-    <section className="h-[510px] w-full bg-hero-black mb-[5.75rem] md:mb-[9.25rem] md:h-[640px]">
+    <section className="h-[510px] w-full bg-hero-black mb-[5.75rem] md:mb-[9.25rem] md:h-[640px] lg:mb-[12.5rem]">
       <div
         className="container--hero bg-[url(./assets/home/hero-small.jpg)]
         bg-[center_top_-3.5rem] bg-no-repeat bg-[length:600px] 
@@ -26,7 +25,6 @@ const Hero = props => {
           </p>
           <SeeProductBtn path="xx99-mark-two-headphones" orange />
         </div>
-        {/* <HeroImage /> */}
       </div>
     </section>
   );
