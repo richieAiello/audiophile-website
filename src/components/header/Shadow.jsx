@@ -1,6 +1,4 @@
-import { forwardRef } from 'react';
-
-const Shadow = (props, ref) => {
+const Shadow = props => {
   return (
     <div
       className={`
@@ -8,9 +6,8 @@ const Shadow = (props, ref) => {
         ${props.className}
       `}
       onClick={props.onClick}
-      ref={ref}
     />
   );
 };
 
-export default forwardRef(Shadow);
+export default Shadow;

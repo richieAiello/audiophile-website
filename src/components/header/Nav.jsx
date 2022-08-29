@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import useMediaQuery from '../../hooks/useMediaQuery';
 import Hamburger from './Hamburger';
 import NavMenu from './NavMenu';
@@ -18,11 +18,11 @@ const Nav = props => {
   const [loading, setLoading] = useState(false);
 
   const desktop = useMediaQuery('(min-width: 1440px)');
-  const shadowRef = useRef(null);
 
   useEffect(() => {
     if (desktop && !cartVisibility) {
-      shadowRef.current.click();
+      setNavVisibility(false);
+      setHideNav(true);
     }
   }, [desktop]);
 
@@ -94,7 +94,6 @@ const Nav = props => {
           'fade-out': animateOut && !navVisibility && !cartVisibility,
         })}
         onClick={handleShadowClick}
-        ref={shadowRef}
       />
       <ShoppingCartBtn onClick={handleCartClick} disabled={loading} />
       <ShoppingCart
