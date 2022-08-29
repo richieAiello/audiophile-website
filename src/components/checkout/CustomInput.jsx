@@ -1,15 +1,15 @@
-import { Field, ErrorMessage } from 'formik';
+import { useField, ErrorMessage } from 'formik';
 import clsx from 'clsx';
 
 const CustomInput = ({
-  name,
   label,
-  placeholder,
-  type,
   colOne,
   colTwo,
   colSpan,
+  ...props
 }) => {
+  const [field, meta] = useField(props);
+
   return (
     <div
       className={`form__wrapper--field ${clsx({
@@ -18,17 +18,21 @@ const CustomInput = ({
         'md:col-span-2': colSpan,
       })}`}
     >
-      <label htmlFor={name} className="form__label">
+      <label htmlFor={field.name} className="form__label">
         {label}
       </label>
-      <ErrorMessage name={name}>
+      <ErrorMessage name={field.name}>
         {msg => <div className="form__error">{msg}</div>}
       </ErrorMessage>
-      <Field
-        name={name}
-        type={type}
-        className="form__input"
-        placeholder={placeholder}
+      <input
+        {...field}
+        {...props}
+        className={`
+          form__input
+          ${clsx({
+            'form__input--error': meta.touched && meta.error,
+          })}
+        `}
       />
     </div>
   );

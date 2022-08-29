@@ -43,7 +43,7 @@ const CartItem = ({ cart, product }) => {
   };
 
   const handleIncrementClick = e => {
-    if (quantity < 10) {
+    if (quantity < 100) {
       currentProduct.quantity++;
 
       dispatch({

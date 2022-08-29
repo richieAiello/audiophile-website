@@ -63,6 +63,16 @@
   align-items: center;
 }
 
+.form__input--error {
+  background-color: rgba(205, 44, 44, 10%);
+  color: #cd2c2c;
+  border-color: #cd2c2c;
+}
+
+.form__input--error::placeholder {
+  color: #cd2c2c;
+}
+
 .form__error {
   margin-bottom: 0.5rem;
   padding-left: 0.75rem;

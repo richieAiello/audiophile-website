@@ -47,13 +47,13 @@ const CheckoutForm = () => {
                     name="name"
                     type="text"
                     label="Name"
-                    placeholder="Richie Rich"
+                    placeholder="Sam Wise"
                   />
                   <CustomInput
                     name="email"
                     type="email"
                     label="Email Address"
-                    placeholder="richierich@somemail.com"
+                    placeholder="thebrave@somemail.com"
                   />
                   <CustomInput
                     name="phone"
@@ -70,7 +70,7 @@ const CheckoutForm = () => {
                     name="address"
                     type="text"
                     label="Address"
-                    placeholder="1337 Audio Avenue"
+                    placeholder="1379 Shire Way"
                     colSpan
                   />
                   <CustomInput
@@ -131,7 +131,7 @@ const CheckoutForm = () => {
                   )}
                 </FormSection>
               </section>
-              <section className="form__wrapper">
+              <section className="form__wrapper lg:sticky lg:top-[5.625rem]">
                 <Summary />
               </section>
             </Form>

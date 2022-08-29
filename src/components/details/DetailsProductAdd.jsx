@@ -24,7 +24,7 @@ const DetailsProductAdd = ({ product }) => {
   );
 
   const handleIncrementClick = e => {
-    quantity < 10 && setQuantity(prev => prev + 1);
+    quantity < 100 && setQuantity(prev => prev + 1);
   };
 
   const handleDecrementClick = e => {
