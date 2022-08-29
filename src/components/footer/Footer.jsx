@@ -5,7 +5,7 @@ import FooterIcons from './FooterIcons';
 
 const Footer = props => {
   return (
-    <footer className="bg-light-black">
+    <footer className="bg-light-black mt-auto">
       <div
         className="accent relative container text-white grid gap-y-12 justify-center 
         text-center pt-[3.25rem] pb-[2.375rem] md:pb-[2.875rem] md:pt-[3.75rem]

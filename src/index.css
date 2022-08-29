@@ -46,6 +46,14 @@
   background-color: #fafafa;
 }
 
+/* Keeps footer at bottom of page on zoom out. */
+/* Footer gets margin-top auto. */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .active {
   text-decoration: 2px underline;
   text-underline-offset: 0.25rem;
